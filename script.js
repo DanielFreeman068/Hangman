@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //Array of words for game
-    var words = ['messi','kevin','crawfish','sushi','basketball','laptop']
+    var words = ['dinosaur','lacrosse','crawfish','hesitation','basketball','laptop']
 
     //Choose random word using index
     var chosenWord = words[Math.floor(Math.random()*words.length)]
