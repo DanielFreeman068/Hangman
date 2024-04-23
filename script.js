@@ -23,6 +23,7 @@ $(document).ready(function(){
         if(chosenWord.indexOf(letter) === -1){
             remainingGuesses--
             $('#remaining-guesses').text("Remaining Guesses: " + remainingGuesses)
+            showBodyPart();
         }else {
             //Reveal the guessed letter
             $('.hidden-letter').each(function(index){
@@ -33,6 +34,11 @@ $(document).ready(function(){
         }
         updateGuesses()
         checkGameStatus()
+    }
+
+    //Function to show body part
+    function showBodyPart() {
+        $('.figure-part').eq(5 - remainingGuesses).css('display', 'block');
     }
 
     //Function to check if the game has been won or lost
@@ -50,6 +56,7 @@ $(document).ready(function(){
     function resetGame(){
         guessedLetters = []
         remainingGuesses = 6
+        $('.figure-part').css('display', 'none');
         $('#remaining-guesses').text("Remaining Guesses: " + remainingGuesses)
         $('#word-container').empty()
         chosenWord = words[Math.floor(Math.random()*words.length)]
@@ -74,5 +81,5 @@ $(document).ready(function(){
     })
 
     //Initial display of remaining guesses
-    $('#remaining-gueses').text('Remaining Guesses: ' + remainingGuesses);
+    $('#remaining-guesses').text('Remaining Guesses: ' + remainingGuesses);
 })
