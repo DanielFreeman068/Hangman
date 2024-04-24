@@ -1,3 +1,6 @@
+const popup = document.getElementById('popup');
+const popuptwo = document.getElementById('popuptwo')
+
 $(document).ready(function(){
     //Array of words for game
     var words = ['dinosaur','lacrosse','crawfish','hesitation','basketball','laptop']
@@ -44,16 +47,19 @@ $(document).ready(function(){
     //Function to check if the game has been won or lost
     function checkGameStatus(){
         if($('.hidden-letter:contains("_")').length ===0){
-            alert('Congratulations You Won!')
+            popuptwo.classList.add('magic');
+            
             resetGame()
         }else if(remainingGuesses === 0){
-            alert('You Suck! The word was: ' + chosenWord)
+            popup.classList.add('magic');
             resetGame()
         }
     }
 
     //Function to reset the game
     function resetGame(){
+        setTimeout(() => {popup.classList.remove('magic'); }, 3000);
+        setTimeout(() => {popuptwo.classList.remove('magic'); }, 3000);
         guessedLetters = []
         remainingGuesses = 6
         $('.figure-part').css('display', 'none');

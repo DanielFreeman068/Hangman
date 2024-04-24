@@ -73,7 +73,7 @@ body {
 .containerGame .header {
     font-size: 80px;
     margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .figure-container {
@@ -153,4 +153,34 @@ button:active {
 button:active {
     --s: #0005;
     transition: none;
+}
+
+.popup{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border:5px solid black;
+    padding:80px;
+    z-index: 5000;
+    border-radius: 25px;
+    background-color: white;
+    display:none;
+}
+
+.popuptwo{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border:5px solid black;
+    padding:80px;
+    z-index: 5000;
+    border-radius: 25px;
+    background-color: white;
+    display:none;
+}
+
+.magic{
+    display:block;
 }
